@@ -1,12 +1,13 @@
-require(["esri/Map", "esri/views/MapView"], function (Map, MapView) {
-        var map = new Map({
-          basemap: "topo-vector"
+require(["esri/views/MapView", "esri/WebMap"], (MapView, WebMap) => {
+       
+        const webmap = new WebMap({
+          portalItem: {
+            id: "da44d6cb560c4322a7842871e71c362b"
+          }
         });
 
-        var view = new MapView({
-          container: "viewDiv",
-          map: map,
-          zoom: 4,
-          center: [15, 65] // longitude, latitude
+        const view = new MapView({
+          map: webmap,
+          container: "viewDiv"
         });
       });
